@@ -1,20 +1,12 @@
-Changelog.txt (as of Dec 26, 2009)
-= Version 1.1.1 =
-- moved theme version display to functions.php
+=== Changelog ===
+= Version 1.2 =
+Date: January 19, 2013
+* Full re-write/over-write to use NoNa theme code (as the original source for NoNa was Pinup Meets Grunge)
 
-  ******************************
-  * Internet Browsers Reviewed *
-  * ========================== *
-  *                            *
-  * Apple Safari v4.0.4 (Mac)  *
-  * Apple Safari v4.0.4 (PC)   *
-  * Firefox v3.5.6             *
-  * Google Chrome v3.0         *
-  * Internet Explorer v8.0     *
-  * Opera v10.10               *
-  *                            *
-  * IE 6 - basic functionality *
-  ******************************
+/** ------------------------------------------------------------------------- */
+= Version 1.1.1 =
+* as of Dec 26, 2009
+* moved theme version display to functions.php
 
 = Version 1.1 =
 * added clearing div to the end of the_Loop
