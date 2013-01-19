@@ -36,7 +36,7 @@
         </div><!-- #header-top -->
         <div id="header-middle">
             <div id="top-navigation-menu">
-                <?php nona_nav_menu(); ?>
+                <?php pmg_nav_menu(); ?>
             </div>
             <div class="clear"></div>
         </div><!-- #header-middle -->

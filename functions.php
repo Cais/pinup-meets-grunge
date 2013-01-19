@@ -21,18 +21,18 @@
  */
 if ( ! isset( $content_width ) ) $content_width = 595;
 
-add_action( 'after_setup_theme', 'nona_setup' );
-if ( ! function_exists( 'nona_setup' ) ):
+add_action( 'after_setup_theme', 'pmg_setup' );
+if ( ! function_exists('pmg_setup') ):
     /**
-     * NoNa Setup
+     * PMG Setup
      *
-     * Tell WordPress to run nona_setup() when the 'after_setup_theme' hook is run.
+     * Tell WordPress to run pmg_setup() when the 'after_setup_theme' hook is run.
      *
      * @version 1.6
      * @date    July 10, 2012
      * Removed deprecated function call to `add_custom_background`
      */
-    function nona_setup() {
+    function pmg_setup() {
         global $wp_version;
         /** This theme styles the visual editor with editor-style.css to match the theme style. */
         add_editor_style();
@@ -48,32 +48,24 @@ if ( ! function_exists( 'nona_setup' ) ):
         ) );
 
         /** wp_nav_menu support */
-        if ( ! function_exists( 'nona_nav_menu' ) ) {
+        if ( ! function_exists('pmg_nav_menu') ) {
             /**
-             * NoNa Nav Menu
              * Add wp_nav_menu() custom menu support
-             *
-             * @package NoNa
-             *
              * @uses    wp_nav_menu
              */
-            function nona_nav_menu() {
+            function pmg_nav_menu() {
                 wp_nav_menu( array(
                     'menu_class' => 'nav-menu',
                     'theme_location' => 'top-menu',
-                    'fallback_cb' => 'nona_list_pages'
+                    'fallback_cb' => 'pmg_list_pages'
                 ) );
             }
         }
-        if ( ! function_exists( 'nona_list_pages' ) ) {
+        if ( ! function_exists('pmg_list_pages') ) {
             /**
-             * NoNa List Pages
-             *
-             * @package NoNa
-             *
              * @uses    wp_list_pages
              */
-            function nona_list_pages() { ?>
+            function pmg_list_pages() { ?>
             <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
             <?php
             }
@@ -94,11 +86,7 @@ if ( ! function_exists( 'nona_setup' ) ):
 endif;
 
 /**
- * NoNa Login
  * Creates a link to the dashboard, or a login / register link.
- *
- * @package NoNa
- * @since   1.4
  *
  * @param   string $args
  *
@@ -111,13 +99,9 @@ endif;
  * @uses    wp_register
  *
  * @return  mixed|string|void
- *
- * Last revised April 23, 2012
- * @version 1.5
- * Added $args to function - adopted from BNS-Login plugin
  */
-if ( ! function_exists( 'nona_login' ) ) {
-    function nona_login( $args = '' ) {
+if ( ! function_exists('pmg_login') ) {
+    function pmg_login( $args = '' ) {
         $values = array( 'login' => '', 'after_login' => '', 'logout' => '', 'goto' => '', 'separator' => '' );
         $args = wp_parse_args( $args, $values );
 
@@ -160,18 +144,13 @@ if ( ! function_exists( 'nona_login' ) ) {
             $output .= wp_register( $sep, '', false );
             $output .= '</div>';
         }
-        echo apply_filters( 'nona_login', $output, $args );
+        echo apply_filters( 'pmg_login', $output, $args );
     }
 }
 
 
-if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
+if ( ! function_exists('pmg_dynamic_copyright') ) {
     /**
-     * NoNa Dynamic Copyright
-     *
-     * @package NoNa
-     * @since   1.4
-     *
      * @param   string $args
      *
      * @uses    apply_filters
@@ -181,7 +160,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
      * @uses    post_date_gmt
      * @uses    wp_parse_args
      */
-    function nona_dynamic_copyright( $args = '' ) {
+    function pmg_dynamic_copyright( $args = '' ) {
         $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
         $args = wp_parse_args( $args, $initialize_values );
 
@@ -227,44 +206,31 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
             : $output .= ' ' . $args['end'];
 
         /** Construct and sprintf the copyright notice */
-        $output = sprintf( __( '<span id="nona-dynamic-copyright"> %1$s </span><!-- #nona-dynamic-copyright -->', 'pinup-meets-grunge' ), $output );
-        echo apply_filters( 'nona_dynamic_copyright', $output, $args );
+        $output = sprintf( __( '<span id="pmg-dynamic-copyright"> %1$s </span><!-- #pmg-dynamic-copyright -->', 'pinup-meets-grunge' ), $output );
+        echo apply_filters( 'pmg_dynamic_copyright', $output, $args );
     }
 }
 
-if ( ! function_exists( 'nona_theme_version' ) ) {
+if ( ! function_exists('pmg_theme_version') ) {
     /**
-     * NoNa Theme Version
-     *
-     * @package NoNa
-     * @since   1.4
-     *
      * @uses    is_child_theme
      * @uses    wp_get_theme
      * @uses    WP_Theme::parent
-     *
-     * @version 1.6
-     * @date    July 10, 2012
-     * Removed deprecated function call to `get_theme_data`
-     *
-     * @version 1.7
-     * @date    December 10, 2012
-     * Minor change to output text
      */
-    function nona_theme_version () {
+    function pmg_theme_version () {
         /** @var $active_theme_data - array object containing the current theme's data */
         $active_theme_data = wp_get_theme();
         if ( is_child_theme() ) {
             /** @var $parent_theme_data - array object containing the Parent Theme's data */
             $parent_theme_data = $active_theme_data->parent();
-            printf( __( '<br /><span id="nona-theme-version">%1$s (v%2$s) accessorizes the %3$s theme (v%4$s) created by %5$s.</span>', 'pinup-meets-grunge' ),
+            printf( __( '<br /><span id="pmg-theme-version">%1$s (v%2$s) accessorizes the %3$s theme (v%4$s) created by %5$s.</span>', 'pinup-meets-grunge' ),
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
                 $parent_theme_data['Name'],
                 $parent_theme_data['Version'],
                 '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
         } else {
-            printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'pinup-meets-grunge' ),
+            printf( __( '<br /><span id="pmg-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'pinup-meets-grunge' ),
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
                 '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
@@ -329,14 +295,8 @@ register_sidebar( array(
     'after_title'    => '</h2>',
 ) );
 
-if ( ! function_exists( 'nona_wp_title' ) ) {
+if ( ! function_exists('pmg_wp_title') ) {
     /**
-     * NoNa WP Title
-     * Utilizes the `wp_title` filter to add text to the default output
-     *
-     * @package NoNa
-     * @since   1.6
-     *
      * @link    http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
      * @link    https://gist.github.com/1410493
      *
@@ -352,7 +312,7 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
      *
      * @return  string - new title text
      */
-    function nona_wp_title( $old_title, $sep, $sep_location ) {
+    function pmg_wp_title( $old_title, $sep, $sep_location ) {
         global $page, $paged;
         /** Set initial title text */
         $nona_title_text = $old_title . get_bloginfo( 'name' );
@@ -371,4 +331,4 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
         return $nona_title_text;
     }
 }
-add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
+add_filter( 'wp_title', 'pmg_wp_title', 10, 3 );

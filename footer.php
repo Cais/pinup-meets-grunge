@@ -23,7 +23,7 @@
             <div class="widget-top"></div>
             <div class="footer-widget">
                 <!-- Middle Footer Widget -->
-                <?php nona_login(); ?>
+                <?php pmg_login(); ?>
             </div>
             <div class="widget-bottom"></div>
             <?php endif; ?><!-- end widget zone footer-middle -->
@@ -41,8 +41,8 @@
 
     <div id="footer-middle">
         <p>
-            <?php nona_dynamic_copyright();
-            nona_theme_version(); ?>
+            <?php pmg_dynamic_copyright();
+            pmg_theme_version(); ?>
         </p>
     </div><!-- #footer-middle -->
 
