@@ -77,7 +77,7 @@ if ( ! function_exists('pmg_setup') ):
          * Make theme available for translation
          * @internal Translations can be filed in the /languages/ directory
          */
-        load_theme_textdomain( 'nona', get_template_directory_uri() . '/languages' );
+        load_theme_textdomain( 'pinup-meets-grunge', get_template_directory_uri() . '/languages' );
         $locale = get_locale();
         $locale_file = get_template_directory_uri() . "/languages/$locale.php";
         if ( is_readable( $locale_file ) )
@@ -116,17 +116,17 @@ if ( ! function_exists('pmg_login') ) {
          * @var $separator      string - characters used to separate link/message texts
          * @var $sep            string - $separator wrapper for styling purposes, etc. - just in case ...
          */
-        $login        = empty( $args['login'] ) ? sprintf( __( 'Log in here!', 'nona-login' ) ) : $args['login'];
-        $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!<br />', 'nona-login' ) ) : $args['after_login'];
-        $logout       = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'nona-login' ) ) : $args['logout'];
-        $goto         = empty( $args['goto'] ) ? sprintf( __( '<br />Go to Dashboard', 'nona-login' ) ) : $args['goto'];
+        $login        = empty( $args['login'] ) ? sprintf( __( 'Log in here!', 'pmg-login' ) ) : $args['login'];
+        $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!<br />', 'pmg-login' ) ) : $args['after_login'];
+        $logout       = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'pmg-login' ) ) : $args['logout'];
+        $goto         = empty( $args['goto'] ) ? sprintf( __( '<br />Go to Dashboard', 'pmg-login' ) ) : $args['goto'];
         $separator    = empty( $args['separator'] ) ? sprintf( __( ' &laquo;&raquo; ' ) ) : $args['separator'];
-        $sep          = '<span class="nona-login-separator">' . $separator . '</span>';
+        $sep          = '<span class="pmg-login-separator">' . $separator . '</span>';
 
         /** The real work gets done next ...  */
         $login_url = home_url( '/wp-admin/' );
         if ( is_user_logged_in() ) {
-            $output .= '<div id="nona-logged-in" class="nona-login">' . $after_login . $sep;
+            $output .= '<div id="pmg-logged-in" class="pmg-login">' . $after_login . $sep;
             /** Multisite - logout returns to Multisite main domain page */
             if ( function_exists( 'get_current_site' ) ) {
                 $current_site = get_current_site();
@@ -139,7 +139,7 @@ if ( ! function_exists('pmg_login') ) {
             $output .= '<a href="' . $login_url . '" title="' . $goto . '">' . $goto . '</a></div>';
         } else {
             /** if user is not logged in display login; or, register if allowed */
-            $output .= '<div id="nona-logged-out" class="nona-login">';
+            $output .= '<div id="pmg-logged-out" class="pmg-login">';
             $output .= '<a href="' . $login_url . '" title="' . $login . '">' . $login . '</a>';
             $output .= wp_register( $sep, '', false );
             $output .= '</div>';
@@ -168,7 +168,7 @@ if ( ! function_exists('pmg_dynamic_copyright') ) {
         $output = '';
 
         /** Start common copyright notice */
-        empty( $args['start'] ) ? $output .= sprintf( __('Copyright', 'nona') ) : $output .= $args['start'];
+        empty( $args['start'] ) ? $output .= sprintf( __('Copyright', 'pinup-meets-grunge') ) : $output .= $args['start'];
 
         /** Calculate Copyright Years; and, prefix with Copyright Symbol */
         if ( empty( $args['copy_years'] ) ) {
@@ -315,20 +315,20 @@ if ( ! function_exists('pmg_wp_title') ) {
     function pmg_wp_title( $old_title, $sep, $sep_location ) {
         global $page, $paged;
         /** Set initial title text */
-        $nona_title_text = $old_title . get_bloginfo( 'name' );
+        $pmg_title_text = $old_title . get_bloginfo( 'name' );
         /** Add wrapping spaces to separator character */
         $sep = ' ' . $sep . ' ';
 
         /** Add the blog description (tagline) for the home/front page */
         $site_tagline = get_bloginfo( 'description', 'display' );
         if ( $site_tagline && ( is_home() || is_front_page() ) )
-            $nona_title_text .= "$sep$site_tagline";
+            $pmg_title_text .= "$sep$site_tagline";
 
         /** Add a page number if necessary */
         if ( $paged >= 2 || $page >= 2 )
-            $nona_title_text .= $sep . sprintf( __( 'Page %s', 'pinup-meets-grunge' ), max( $paged, $page ) );
+            $pmg_title_text .= $sep . sprintf( __( 'Page %s', 'pinup-meets-grunge' ), max( $paged, $page ) );
 
-        return $nona_title_text;
+        return $pmg_title_text;
     }
 }
 add_filter( 'wp_title', 'pmg_wp_title', 10, 3 );
