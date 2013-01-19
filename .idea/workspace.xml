@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43f33f24-494b-4053-9658-243ec37a2c5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Blank_Header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/GrungeOverlayTileSmall.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="pinup-meets-grunge.iws" />
@@ -31,7 +26,7 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="354" column="0" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.94977844">
+            <state line="48" column="0" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.92466766">
               <folding />
             </state>
           </provider>
@@ -293,7 +288,11 @@
       <created>1358638730334</created>
       <updated>1358638730334</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Rename functions to use pmg prefix; adjust menu styles">
+      <created>1358639463952</created>
+      <updated>1358639463952</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -357,7 +356,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Over-write file with NoNa code; amend i18n textdomain" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename functions to use pmg prefix; adjust menu styles" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -372,6 +371,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Over-write file with NoNa code; amend i18n textdomain" />
+    <MESSAGE value="Rename functions to use pmg prefix; adjust menu styles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -496,7 +496,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="354" column="0" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.94977844">
+        <state line="48" column="0" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.92466766">
           <folding />
         </state>
       </provider>
