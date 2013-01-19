@@ -1,0 +1,41 @@
+Changelog.txt (as of Dec 26, 2009)
+= Version 1.1.1 =
+- moved theme version display to functions.php
+
+  ******************************
+  * Internet Browsers Reviewed *
+  * ========================== *
+  *                            *
+  * Apple Safari v4.0.4 (Mac)  *
+  * Apple Safari v4.0.4 (PC)   *
+  * Firefox v3.5.6             *
+  * Google Chrome v3.0         *
+  * Internet Explorer v8.0     *
+  * Opera v10.10               *
+  *                            *
+  * IE 6 - basic functionality *
+  ******************************
+
+= Version 1.1 =
+* added clearing div to the end of the_Loop
+* added wp_link_pages() function
+* re-coded next and previous navigation links
+
+= Version 1.0.6 =
+* released at http://buynowshop.com/themes/pinup-meets-grunge/
+
+= Version 1.0.4 =
+* re-coded footer.php to address fopen() issues
+* updated theme URL (to its own page)
+* corrected typo in Theme Description
+
+= Version 1.0.2 =
+* amended GPL release statement to include CSS, XHTML, and design (as referenced in the "default" theme's GPL release statement).
+* set all text to a default of black (hex: #000000).
+
+= Version 1.0.1 =
+* correction to theme description
+* added additonal secondary screenshots (showing some color varieties)
+
+= Version 1.0 =
+* Initial Release
