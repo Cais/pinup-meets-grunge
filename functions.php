@@ -115,7 +115,7 @@ if ( ! function_exists('pmg_login') ) {
         $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!<br />', 'pmg-login' ) ) : $args['after_login'];
         $logout       = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'pmg-login' ) ) : $args['logout'];
         $goto         = empty( $args['goto'] ) ? sprintf( __( '<br />Go to Dashboard', 'pmg-login' ) ) : $args['goto'];
-        $separator    = empty( $args['separator'] ) ? sprintf( __( ' &laquo;&raquo; ' ) ) : $args['separator'];
+        $separator    = empty( $args['separator'] ) ? sprintf( __( ' &laquo;&raquo; ', 'pinup-meets-grunge' ) ) : $args['separator'];
         $sep          = '<span class="pmg-login-separator">' . $separator . '</span>';
 
         /** The real work gets done next ...  */
