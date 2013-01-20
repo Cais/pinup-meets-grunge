@@ -25,12 +25,7 @@ add_action( 'after_setup_theme', 'pmg_setup' );
 if ( ! function_exists('pmg_setup') ):
     /**
      * PMG Setup
-     *
      * Tell WordPress to run pmg_setup() when the 'after_setup_theme' hook is run.
-     *
-     * @version 1.6
-     * @date    July 10, 2012
-     * Removed deprecated function call to `add_custom_background`
      */
     function pmg_setup() {
         global $wp_version;

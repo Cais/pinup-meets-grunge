@@ -35,6 +35,11 @@
  * @todo Review date.php template for better ways to incorporate end-user time and date settings
  * @todo Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
  * @todo Review addition of a "loop" template as well as other template parts to tidy up the code. (see Shades v1.8 / Ground Floor v1.9)
+ *
+ * @version 2.0
+ * @date    January 19, 2013
+ * Fully refactored to use NoNa theme version 1.7 (NoNa was originally built
+ * from Pinup Meets Grunge).
  */
 
 get_header(); ?>
