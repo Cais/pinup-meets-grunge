@@ -1,5 +1,16 @@
 === Changelog ===
-= Version 1.2 =
+* Last revised March 31, 2013
+== Version 2.1 ==
+* Although the theme is functional it may not be fully supported going forward.
+
+= Code =
+* Code refactoring / formatting and block termination comments added
+
+= CSS =
+= Miscellaneous =
+
+/** ------------------------------------------------------------------------- */
+== Version 2.0 ==
 Date: January 19, 2013
 * Full re-write/over-write to use NoNa theme code (as the original source for NoNa was Pinup Meets Grunge)
 
@@ -27,7 +38,7 @@ Date: January 19, 2013
 
 = Version 1.0.1 =
 * correction to theme description
-* added additonal secondary screenshots (showing some color varieties)
+* added additional secondary screenshots (showing some color varieties)
 
 = Version 1.0 =
 * Initial Release
