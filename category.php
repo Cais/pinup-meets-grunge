@@ -25,23 +25,35 @@ $category_link = get_category_link ( $cat_id ); ?>
     <div id="content">
 
         <div id="category-title">
+
             <?php
             global $paged;
             if ( $paged < 2 ) {
-                printf( __( 'First page of the %1$s archive', 'pinup-meets-grunge' ), '<span id="category-name">' . single_cat_title( '', false ) . '</span>'  );
+                printf( __( 'First page of the %1$s archive', 'pinup-meets-grunge' ),
+                    '<span id="category-name">' . single_cat_title( '', false ) . '</span>'
+                );
             } else {
-                printf( __( 'Page %1$s of the %2$s archive.', 'pinup-meets-grunge' ), $paged, '<a href=' . $category_link . ' title="' . $curr_cat . '"><span id="category-name">' . single_cat_title( '', false ) . '</span></a>' );
-            } ?>
+                printf( __( 'Page %1$s of the %2$s archive.', 'pinup-meets-grunge' ),
+                    $paged,
+                    '<a href=' . $category_link . ' title="' . $curr_cat . '"><span id="category-name">' . single_cat_title( '', false ) . '</span></a>'
+                );
+            } /** End if - paged less than 2 */ ?>
+
         </div><!-- #category-title -->
+
         <div id="category-description">
             <?php echo category_description(); ?>
         </div><!-- #category-description -->
 
         <!-- start the Loop -->
         <?php
-        if ( have_posts() ) :
+        if ( have_posts() ) {
+
             $count = 0;
-            while ( have_posts() ) : the_post();
+
+            while ( have_posts() ) {
+
+                the_post();
                 $count++; ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to ', 'pinup-meets-grunge' ); ?><?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -67,7 +79,8 @@ $category_link = get_category_link ( $cat_id ); ?>
                         <div class="clear"></div><!-- For inserted media at the end of the post -->
                         <?php endif; ?>
                 </div><!-- .post #post-ID -->
-                <?php endwhile; ?>
+            <?php } ?>
+
             <div id="nav-global" class="navigation">
                 <div class="left">
                     <?php next_posts_link( __( '&laquo; Previous entries ', 'pinup-meets-grunge' ) ); ?>
@@ -76,17 +89,26 @@ $category_link = get_category_link ( $cat_id ); ?>
                     <?php previous_posts_link( __( ' Next entries &raquo;', 'pinup-meets-grunge' ) ); ?>
                 </div>
             </div><!-- ,navigation -->
+
             <div class="clear"></div>
-            <?php else : ?>
-            <h2><?php printf( __( 'Search Results for: %s', 'pinup-meets-grunge' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+
+        <?php } else { ?>
+
+            <h2>
+                <?php printf( __( 'Search Results for: %s', 'pinup-meets-grunge' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+            </h2>
             <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'pinup-meets-grunge' ); ?></p>
             <?php
             get_search_form();
-        endif; ?>
+        } ?>
         <!-- end the Loop -->
 
     </div><!-- #content -->
+
     <div id="after-content"></div>
+
 </div><!-- #main-blog -->
-<?php get_sidebar();
+
+<?php
+get_sidebar();
 get_footer();
