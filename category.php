@@ -17,9 +17,13 @@ get_header();
 $curr_cat = single_cat_title( '', false );
 $cat_id = get_cat_ID( $curr_cat );
 $category_link = get_category_link ( $cat_id ); ?>
+
 <div id="main-blog">
+
     <div id="before-content"></div>
+
     <div id="content">
+
         <div id="category-title">
             <?php
             global $paged;
