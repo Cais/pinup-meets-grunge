@@ -44,6 +44,9 @@ if ( ! function_exists( 'pmg_setup' ) ):
 			'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
 		) );
 
+		/** Add support for the `<title />` tag */
+		add_theme_support( 'title-tag' );
+
 		/** wp_nav_menu support */
 		if ( ! function_exists( 'pmg_nav_menu' ) ) {
 			/**
@@ -329,8 +332,8 @@ if ( ! function_exists( 'pmg_wp_title' ) ) {
 	 * @link    http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 	 * @link    https://gist.github.com/1410493
 	 *
-	 * @param   string $old_title    - default title text
-	 * @param   string $sep          - separator character
+	 * @param   string $old_title - default title text
+	 * @param   string $sep       - separator character
 	 *
 	 * @uses    (global) $page
 	 * @uses    (global) $paged
@@ -378,7 +381,8 @@ if ( ! function_exists( 'pmg_wp_title' ) ) {
 
 			return null;
 
-		} /** End if - sanity check for WordPress 4.1 */
+		}
+		/** End if - sanity check for WordPress 4.1 */
 
 	}
 	/** End function - title */
