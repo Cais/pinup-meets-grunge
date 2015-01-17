@@ -344,7 +344,7 @@ sub {
 #header-top {
 	background: url(images/Header.png) no-repeat;
 	height: 350px;
-	margin-top: 0px;
+	margin-top: 0;
 }
 
 #header-middle {
@@ -587,7 +587,6 @@ pre {
 	overflow: auto;
 	text-align: left;
 
-	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
 	white-space: pre-wrap; /* css-3 */
 	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
 	white-space: -o-pre-wrap; /* Opera 7 */
@@ -859,12 +858,12 @@ ul.children li {
 	font-size: 100%;
 }
 
-.odd, comment-text-1 {
+.odd, .comment-text-1 {
 	background: #af7d7a;
 	margin-top: 1px;
 }
 
-.even, comment-text-2 {
+.even, .comment-text-2 {
 	background: #60606b;
 	margin-top: 1px;
 }

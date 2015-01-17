@@ -7,6 +7,8 @@ The Pinup Meets Grunge Copyright can be found at the end of this file.
 * General Code reformatting to better meet WordPress Coding Standards
 
 = CSS =
+* Minor corrections in the stylesheet
+
 = Miscellaneous =
 * Updated Copyright dates
 
