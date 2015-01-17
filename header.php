@@ -1,4 +1,3 @@
-<!DOCTYPE PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 /**
  * Header Template
@@ -12,18 +11,29 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2015, Edward Caissie
  */ ?>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
-	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+
+	<?php /** Check for WordPress 4.1 compatibility */
+	if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php } ?>
+
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
 	<?php
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	wp_head(); ?>
+
 </head>
+
 <body <?php body_class(); ?>>
 <div id="outside">
 	<div id="header">

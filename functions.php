@@ -100,11 +100,12 @@ endif;
  */
 if ( ! function_exists( 'pmg_login' ) ) {
 	function pmg_login( $args = '' ) {
-		$values = array( 'login'       => '',
-		                 'after_login' => '',
-		                 'logout'      => '',
-		                 'goto'        => '',
-		                 'separator'   => ''
+		$values = array(
+			'login'       => '',
+			'after_login' => '',
+			'logout'      => '',
+			'goto'        => '',
+			'separator'   => ''
 		);
 		$args   = wp_parse_args( $args, $values );
 
@@ -164,10 +165,11 @@ if ( ! function_exists( 'pmg_dynamic_copyright' ) ) {
 	 * @uses    wp_parse_args
 	 */
 	function pmg_dynamic_copyright( $args = '' ) {
-		$initialize_values = array( 'start'      => '',
-		                            'copy_years' => '',
-		                            'url'        => '',
-		                            'end'        => ''
+		$initialize_values = array(
+			'start'      => '',
+			'copy_years' => '',
+			'url'        => '',
+			'end'        => ''
 		);
 		$args              = wp_parse_args( $args, $initialize_values );
 
@@ -246,99 +248,139 @@ if ( ! function_exists( 'pmg_theme_version' ) ) {
 	}
 }
 
-/**
- * Widgets Areas
- *
- * @uses    register_sidebar
- */
-register_sidebar( array(
-	'name'          => __( 'Sidebar 1', 'pinup-meets-grunge' ),
-	'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-	'name'          => __( 'Sidebar 2', 'pinup-meets-grunge' ),
-	'description'   => __( 'Second sidebar area located on the right side of the layout', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-	'name'          => __( 'Sidebar 3', 'pinup-meets-grunge' ),
-	'description'   => __( 'Third sidebar area located on the right side of the layout', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-	'name'          => __( 'Footer Left', 'pinup-meets-grunge' ),
-	'id'            => 'footer-left',
-	'description'   => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-	'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-	'name'          => __( 'Footer Middle', 'pinup-meets-grunge' ),
-	'id'            => 'footer-middle',
-	'description'   => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-	'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-	'name'          => __( 'Footer Right', 'pinup-meets-grunge' ),
-	'id'            => 'footer-right',
-	'description'   => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'pinup-meets-grunge' ),
-	'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-	'after_widget'  => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
-	'before_title'  => '<h2 class="widget-title">',
-	'after_title'   => '</h2>',
-) );
+if ( ! function_exists( 'pmg_widget_areas' ) ) {
+	/**
+	 * Widgets Areas
+	 *
+	 * @package Pinup_Meets_Grunge
+	 * @version 2.2
+	 *
+	 * @uses    __
+	 * @uses    register_sidebar
+	 */
+	function pmg_widget_areas() {
+		register_sidebar( array(
+			'name'          => __( 'Sidebar 1', 'pinup-meets-grunge' ),
+			'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Sidebar 2', 'pinup-meets-grunge' ),
+			'description'   => __( 'Second sidebar area located on the right side of the layout', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Sidebar 3', 'pinup-meets-grunge' ),
+			'description'   => __( 'Third sidebar area located on the right side of the layout', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Footer Left', 'pinup-meets-grunge' ),
+			'id'            => 'footer-left',
+			'description'   => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Footer Middle', 'pinup-meets-grunge' ),
+			'id'            => 'footer-middle',
+			'description'   => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Footer Right', 'pinup-meets-grunge' ),
+			'id'            => 'footer-right',
+			'description'   => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'pinup-meets-grunge' ),
+			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	}
+	/** End functions - widget areas */
+
+}
+add_action( 'widgets_init', 'pmg_widget_areas' );
+
 
 if ( ! function_exists( 'pmg_wp_title' ) ) {
 	/**
+	 * WP Title
+	 *
+	 * A callback function used with the `wp_title` hook
+	 *
+	 * @package Pinup_Meets_Grunge
+	 * @since   1.0
+	 *
 	 * @link    http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 	 * @link    https://gist.github.com/1410493
 	 *
 	 * @param   string $old_title    - default title text
 	 * @param   string $sep          - separator character
-	 * @param   string $sep_location - left|right - separator placement in relationship to title
 	 *
-	 * @uses    (global) var $page
-	 * @uses    (global) var $paged
+	 * @uses    (global) $page
+	 * @uses    (global) $paged
+	 * @uses    __
 	 * @uses    get_bloginfo
 	 * @uses    is_front_page
 	 * @uses    is_home
 	 *
 	 * @return  string - new title text
+	 *
+	 * @version 2.2
+	 * @date    January 17, 2015
+	 * Added conditional check for WordPress 4.1 `add_theme_support( 'title-tag' )`
 	 */
-	function pmg_wp_title( $old_title, $sep, $sep_location ) {
-		global $page, $paged;
-		/** Set initial title text */
-		$pmg_title_text = $old_title . get_bloginfo( 'name' );
-		/** Add wrapping spaces to separator character */
-		$sep = ' ' . $sep . ' ';
+	function pmg_wp_title( $old_title, $sep ) {
 
-		/** Add the blog description (tagline) for the home/front page */
-		$site_tagline = get_bloginfo( 'description', 'display' );
-		if ( $site_tagline && ( is_home() || is_front_page() ) ) {
-			$pmg_title_text .= "$sep$site_tagline";
-		}
+		/** Sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )` */
+		if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
-		/** Add a page number if necessary */
-		if ( $paged >= 2 || $page >= 2 ) {
-			$pmg_title_text .= $sep . sprintf( __( 'Page %s', 'pinup-meets-grunge' ), max( $paged, $page ) );
-		}
+			global $page, $paged;
 
-		return $pmg_title_text;
+			/** Set initial title text */
+			$pmg_title_text = $old_title . get_bloginfo( 'name' );
+
+			/** Add wrapping spaces to separator character */
+			$sep = ' ' . $sep . ' ';
+
+			/** Add the blog description (tagline) for the home/front page */
+			$site_tagline = get_bloginfo( 'description', 'display' );
+			if ( $site_tagline && ( is_home() || is_front_page() ) ) {
+				$pmg_title_text .= "$sep$site_tagline";
+			}
+			/** End if - use the site's tagline */
+
+			/** Add a page number if necessary */
+			if ( $paged >= 2 || $page >= 2 ) {
+				$pmg_title_text .= $sep . sprintf( __( 'Page %s', 'pinup-meets-grunge' ), max( $paged, $page ) );
+			}
+
+			/** End if - paged content */
+
+			return $pmg_title_text;
+
+		} else {
+
+			return null;
+
+		} /** End if - sanity check for WordPress 4.1 */
+
 	}
+	/** End function - title */
 }
-add_filter( 'wp_title', 'pmg_wp_title', 10, 3 );
+add_filter( 'wp_title', 'pmg_wp_title', 10, 2 );
