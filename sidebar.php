@@ -10,6 +10,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2015, Edward Caissie
+ *
+ * @version 2.2
+ * @date    January 17, 2015
+ * Removed `wp_list_bookmarks`
  */ ?>
 <div id="sidebar">
 	<div id="sidebar-inside">
@@ -31,12 +35,6 @@
 					<div align="center">
 						<?php get_calendar( 0 ); ?>
 					</div>
-				</div><!-- .widget -->
-				<div class="widget-bottom"></div>
-
-				<div class="widget-top"></div>
-				<div class="widget">
-					<?php wp_list_bookmarks( 'title_li=&title_before=<h2 class="widget-title">&title_after=</h2>&category_before=&category_after=' ); ?>
 				</div><!-- .widget -->
 				<div class="widget-bottom"></div>
 
