@@ -14,6 +14,9 @@
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
 
+/** Set specific URL for DRY reasons */
+define( 'PMG_HOME_URL', 'BuyNowShop.com' );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  * Used to set the width of images and content. Should be equal to the width the theme
@@ -241,12 +244,12 @@ if ( ! function_exists( 'pmg_theme_version' ) ) {
 				$active_theme_data['Version'],
 				$parent_theme_data['Name'],
 				$parent_theme_data['Version'],
-				'<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+				'<a href="http://' . PMG_HOME_URL . '/" title="' . PMG_HOME_URL . '">' . PMG_HOME_URL . '</a>' );
 		} else {
 			printf( __( '<br /><span id="pmg-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'pinup-meets-grunge' ),
 				$active_theme_data['Name'],
 				$active_theme_data['Version'],
-				'<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+				'<a href="http://' . PMG_HOME_URL . '/" title="' . PMG_HOME_URL . '">' . PMG_HOME_URL . '</a>' );
 		}
 	}
 }
