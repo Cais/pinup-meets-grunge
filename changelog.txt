@@ -11,6 +11,7 @@ The Pinup Meets Grunge Copyright can be found at the end of this file.
 
 = Miscellaneous =
 * Updated Copyright dates
+* Updated tags used in stylesheet header
 
 /** ------------------------------------------------------------------------- */
 == Version 2.1 ==
