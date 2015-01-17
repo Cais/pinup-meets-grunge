@@ -10,6 +10,7 @@ The Pinup Meets Grunge Copyright can be found at the end of this file.
 
 = CSS =
 * Minor corrections in the stylesheet
+* Updated styles to better suit the content area's full width
 
 = Miscellaneous =
 * Updated Copyright dates

@@ -2,7 +2,7 @@
 Theme Name: Pinup Meets Grunge
 Theme URI: http://buynowshop.com/themes/pinup-meets-grunge/
 Description: A pretty pin-up girl posing in the header highlights this grunge based theme and beautifully blends the user option enabled background colors. The built-in user option to change the background color gives you the creative opportunity to truly make this theme your own. Do not be scared off by the dark look, try installing your own copy and play with the color changing option for yourself. If you're not a fan of pinup girls feel free to drop us a note and we can discuss additional options.
-Version: 2.1
+Version: 2.2
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 Tags: black, red, white, dark, two-columns, right-sidebar, fixed-layout, custom-colors, translation-ready, threaded-comments, custom-menu, custom-background
@@ -615,7 +615,7 @@ code {
 
 /*-- Tables --*/
 table {
-	width: 100%;
+	width: 99%;
 }
 
 tr {
@@ -691,7 +691,13 @@ img {
 }
 
 img.wp-smiley {
-	float: none;
+	display: none;
+}
+
+/** Keeps Featured Images to width of container */
+img.wp-post-image {
+	height: auto;
+	width: 100%;
 }
 
 p img {
@@ -707,6 +713,15 @@ p img {
 	font-size: 105%;
 	margin: 5px;
 	padding: 5px;
+}
+
+.wp-caption {
+	max-width: 96%;
+}
+
+.wp-caption img {
+	height: auto;
+	max-width: 99%;
 }
 
 .wp-caption img.size-full {
@@ -1178,6 +1193,12 @@ img#wpstats {
 
 #akismetstats {
 	margin: 0 auto;
+}
+
+/* Miscellaneous */
+/** Make sure Twitter embeds are not fixed width */
+#content .twitter-tweet-rendered {
+	width: 100% !important;
 }
 
 /* BNS Plugins */
