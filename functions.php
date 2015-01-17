@@ -161,8 +161,14 @@ if ( ! function_exists( 'pmg_login' ) ) {
 
 if ( ! function_exists( 'pmg_dynamic_copyright' ) ) {
 	/**
+	 * Dynamic Copyright
+	 *
+	 * @package Pinup_Meets_Grunge
+	 * @since   1.0
+	 *
 	 * @param   string $args
 	 *
+	 * @uses    __
 	 * @uses    apply_filters
 	 * @uses    get_bloginfo
 	 * @uses    get_posts
@@ -171,6 +177,7 @@ if ( ! function_exists( 'pmg_dynamic_copyright' ) ) {
 	 * @uses    wp_parse_args
 	 */
 	function pmg_dynamic_copyright( $args = '' ) {
+
 		$initialize_values = array(
 			'start'      => '',
 			'copy_years' => '',
@@ -224,14 +231,29 @@ if ( ! function_exists( 'pmg_dynamic_copyright' ) ) {
 		/** Construct and sprintf the copyright notice */
 		$output = sprintf( __( '<span id="pmg-dynamic-copyright"> %1$s </span><!-- #pmg-dynamic-copyright -->', 'pinup-meets-grunge' ), $output );
 		echo apply_filters( 'pmg_dynamic_copyright', $output, $args );
+
 	}
+	/** End function - dynamic copyright */
+
 }
+/** End if - function exists */
+
 
 if ( ! function_exists( 'pmg_theme_version' ) ) {
 	/**
+	 * Theme Version
+	 *
+	 * @package Plugin_Meets_Grunge
+	 * @since   1.0
+	 *
+	 * @uses    __
 	 * @uses    is_child_theme
 	 * @uses    wp_get_theme
 	 * @uses    WP_Theme::parent
+	 *
+	 * @version 2.2
+	 * @date    January 17, 2015
+	 * Added `PMG_HOME_URL` CONSTANT pointing to BuyNowShop.com
 	 */
 	function pmg_theme_version() {
 		/** @var $active_theme_data - array object containing the current theme's data */
